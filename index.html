@@ -1,17 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Chrome Extension</title>
-</head>
-<body>
-    <input type="text" id="input-el">
-    <button id="input-btn">SAVE INPUT</button>
-    <button id="tab-btn">SAVE TAB</button>
-    <button id="delete-btn">DELETE ALL</button>
-    <ul id="ul-el"></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Linkspace</title>
+  </head>
+  <body>
+    <div class="app simple-app">
+      <main>
+        <aside class="guide" id="guide" hidden>
+          <div class="guide-head">
+            <h2>Quick guide</h2>
+            <button class="icon-btn" id="close-guide" aria-label="Close guide">
+              ×
+            </button>
+          </div>
+          <ol>
+            <li>
+              <b>Save a link</b>
+              <span>Paste a website below, then select Save input.</span>
+            </li>
+            <li>
+              <b>Save a tab</b>
+              <span>Select Save current tab to capture the page you are viewing.</span>
+            </li>
+            <li>
+              <b>Delete all</b>
+              <span>Double-click Delete all to clear every saved link.</span>
+            </li>
+          </ol>
+        </aside>
+
+        <section class="capture simple-capture">
+          <div class="section-head">
+            <div>
+              <h1>Linkspace</h1>
+              <p class="subtitle">Save useful links from your browser.</p>
+            </div>
+            <button
+              class="icon-btn help-btn"
+              id="help-btn"
+              aria-label="Open quick guide"
+              aria-expanded="false"
+            >
+              ?
+            </button>
+          </div>
+
+          <label for="input-el">Website</label>
+          <input
+            id="input-el"
+            type="text"
+            placeholder="example.com or paste a URL"
+            autocomplete="url"
+          />
+
+          <div class="simple-actions">
+            <button class="primary" id="input-btn" type="button">Save input</button>
+            <button class="secondary" id="tab-btn" type="button">
+              Save current tab
+            </button>
+            <button class="delete-button" id="delete-btn" type="button">
+              Delete all
+            </button>
+          </div>
+        </section>
+
+        <section class="library simple-library">
+          <div class="library-head">
+            <div>
+              <h2>Saved links</h2>
+              <p id="link-count">0 links</p>
+            </div>
+          </div>
+
+          <ul id="ul-el" class="simple-link-list" aria-live="polite"></ul>
+
+          <div class="empty" id="empty-state">
+            <span class="empty-icon">♧</span>
+            <h3>No links saved</h3>
+            <p>Add a website above or save your current browser tab.</p>
+            <button class="empty-help" id="empty-help" type="button">
+              View the quick guide
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

@@ -1,12 +1,13 @@
 {
-    "manifest_version": 3,
-    "version": "1.1",
-    "name": "Leads tracker",
-    "action": {
-        "default_popup": "index.html",
-        "default_icon": "icon.png"
-    },
-    "permissions": [
-        "tabs"
-    ]
+  "manifest_version": 3,
+  "version": "2.0.0",
+  "name": "Linkspace – Local Link Workspace",
+  "description": "Save useful links and the current browser tab.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Open Linkspace",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["activeTab"],
+  "icons": { "128": "icon.png" }
 }
